@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "banishment_dimension",
+  "version": "${version}",
+  "name": "放逐 / Banishment",
+  "description": "面向 1.21.1 Fabric 服务器的非封禁轻度惩罚工具（r19 行为等价重写）：/banish 将玩家放逐到平坦的放逐维度（基岩地板 + 单层浅水，冒险模式，无生物无结构），/unbanish 恢复原位原背包与游戏模式（离线玩家支持待解除），/return 把越权进入放逐维度的在线玩家强制送回主世界，/escape 让未被放逐的误入者自救回到进入前位置。放逐记录存于服务端存档 banishment/ 文件夹的纯文本 JSON（零 NBT），关服/崩溃/重启后放逐自动延续。A non-ban light punishment tool rewritten for Fabric 1.21.1.",
+  "authors": [
+    "VIASR",
+    "BlockForge rewrite"
+  ],
+  "contact": {},
+  "license": "SEE LICENSE IN LICENSE",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "cn.blockforge.generated.banishmentdimension.BanishmentMod"
+    ],
+    "client": [
+      "cn.blockforge.generated.banishmentdimension.client.BanishmentClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

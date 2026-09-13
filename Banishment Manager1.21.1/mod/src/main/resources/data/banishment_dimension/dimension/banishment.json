@@ -1,0 +1,22 @@
+{
+  "type": "banishment_dimension:banishment",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "banishment_dimension:banishment",
+      "features": false,
+      "lakes": false,
+      "layers": [
+        {
+          "block": "minecraft:bedrock",
+          "height": 1
+        },
+        {
+          "block": "minecraft:water",
+          "height": 1
+        }
+      ],
+      "structure_overrides": []
+    }
+  }
+}
