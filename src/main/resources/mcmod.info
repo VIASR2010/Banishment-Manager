@@ -1,0 +1,17 @@
+[
+  {
+    "modid": "banishment_dimension",
+    "name": "放逐 / Banishment",
+    "description": "面向 1.12.2 Forge 服务器的非封禁轻度惩罚工具：/banish 将玩家放逐到维度 114（基岩地板 + 一层浅水 + 全亮灰天，冒险模式，无生物无结构），/unbanish 恢复原位原背包与游戏模式（离线玩家支持待解除），/return 由 OP 把越权进入 114 的在线玩家强制送回主世界（只能对未被放逐的玩家使用），/escape 则让任何玩家都能自救：不在放逐名单却身陷 114 时，使用 /escape 即可返回进入前的位置。/banishtime 可按\u201c在线分钟\u201d定时放逐：只在该玩家在线时倒计时，下线即冻结并写进文件，到期自动解除；也可用 /banishtime add|set 增加或重设剩余时长。背包全程内存对象级对调，玩家数据存于服务端存档 banishment/ 文件夹的纯文本 JSON（每玩家一个文件、零 NBT），兼容一切自定义物品模组；关服/崩溃/重启后放逐自动延续，背包按保存点回档不蒸发；10 秒状态循环防自杀防挖掘；事件拦截 + 巡检双保险防越狱，且确保任何进入 114 的玩家都能离开，杜绝\"无法离开\"型错误。兼容 Forge 1.12.2 全部构建：编译核验于 14.23.5.2847，支持至最终版 14.23.5.2864。提示与通知的语言在 config/banishment.cfg 里选：zh 只中文 / en 只英文 / both 中英双语（默认），改完自动热更新、无需重启；玩家自己装了本模组的客户端时，也能在主界面 Mods → 本模组 → Config 里点按钮改（该页面跟随客户端语言）。\n\nA non-ban light punishment tool for 1.12.2 Forge servers: /banish sends a player to dimension 114 (bedrock floor with a single shallow water layer, always-bright grey sky; adventure mode; no mobs or structures), /unbanish restores their original position, inventory and game mode (offline players can be queued for release), /return lets an OP force any online player who illegally entered 114 back to the Overworld (only usable on players who are NOT banished), and /escape is a self-serve escape: if you are not banished but stuck in 114, use /escape to return to the position you were at before entering. /banishtime banishes for a fixed number of \u201conline minutes\u201d: the countdown only runs while the player is online, freezes and is saved to disk when they log off, and releases automatically when it runs out; use /banishtime add|set to add or reset the remaining time. Inventories are swapped as live in-memory objects - zero NBT; records persist as plain-text JSON files (one per player) in the banishment/ folder of the server world, compatible with any custom-item mod. Banishments survive shutdowns, crashes and restarts, with inventories rolled back to the latest save point instead of vanishing; a 10-second effect cycle prevents suicide and mining; instant event interception plus periodic sweeps prevent jailbreaks and make sure anyone entering 114 can always leave, eliminating \"stuck\" errors. Compatible with all Forge 1.12.2 builds: verified against 14.23.5.2847, supported through the final 14.23.5.2864. Chat language is configurable in config/banishment.cfg (zh = Chinese only / en = English only / both = bilingual, the default) and hot-reloads without a restart; players whose client also has this mod can also change it under Mods -> Banishment -> Config.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "authorList": [
+      "VIASR"
+    ],
+    "credits": "Made by VIASR",
+    "logoFile": "",
+    "parent": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

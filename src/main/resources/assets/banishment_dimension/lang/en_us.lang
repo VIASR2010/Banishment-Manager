@@ -1,0 +1,75 @@
+# Banishment —— English (US) texts
+# Author: VIASR · Forge 1.12.2
+# Placeholders follow vanilla rules: %1$s %2$s are positional arguments.
+# This file is read by the server-side L10n helper to build bilingual chat
+# lines, and is also loaded natively by clients that have the mod installed.
+
+banishment_dimension.prefix=Banishment
+banishment_dimension.actor.admin=An admin
+banishment_dimension.actor.system=The system
+
+# ---- command usage ----
+banishment_dimension.usage.banish=§7/banish <player|list>
+banishment_dimension.usage.unbanish=§7/unbanish <player>
+banishment_dimension.usage.return=§7/return <player>
+banishment_dimension.usage.escape=§7/escape
+banishment_dimension.usage.banishtime=§7/banishtime <player> <minutes> or /banishtime add|set <player> <minutes>
+
+# ---- /banish list ----
+banishment_dimension.msg.list.empty=§fNo players are currently banished.
+banishment_dimension.msg.list.header=§fCurrently banished §e%1$s §fplayer(s):
+banishment_dimension.msg.list.sep=,
+banishment_dimension.msg.list.tag.pending=§7[pending release]
+banishment_dimension.msg.list.tag.offline=§7[offline]
+banishment_dimension.msg.list.tag.timed=§7[%1$s min left]
+banishment_dimension.msg.list.note=§8Records live in the %1$s/ folder of the server world (plain-text JSON, zero NBT) and survive restarts.
+
+# ---- command feedback ----
+banishment_dimension.msg.err.already_banished=§c%1$s is already banished.
+banishment_dimension.msg.err.not_banished=§c%1$s is not currently banished.
+banishment_dimension.msg.err.offline_no_record=§cPlayer %1$s is offline and has no record in the banishment folder.
+banishment_dimension.msg.ok.banished=§aBanished §e%1$s §ato dimension §c%2$s§a. Use /unbanish %1$s to release.
+banishment_dimension.msg.ok.released=§aThe banishment of §e%1$s §ais lifted: inventory and game mode restored, record file deleted.
+banishment_dimension.msg.ok.pending_marked=§aPending release marked for offline player §e%1$s §a(saved in its record file); they will return to their original spot with the inventory restored at next login.
+banishment_dimension.msg.info.pending_already=§e%1$s §7is already queued for release and will be restored on next login.
+banishment_dimension.msg.ok.returned=§aSent §e%1$s §aback to the Overworld spawn point.
+banishment_dimension.msg.err.not_online=§cPlayer %1$s is offline and cannot be teleported.
+banishment_dimension.msg.err.overworld_unavailable=§cThe Overworld is temporarily unavailable; please try again.
+banishment_dimension.msg.err.return_banished=§c%1$s is currently banished; /return can only be used on players who are NOT banished. Use /unbanish %1$s to release them.
+
+# ---- /banishtime timed banishment ----
+banishment_dimension.msg.err.banishtime_bad_minutes=§cTime must be a positive integer (minutes); decimals and 0 are not allowed. You entered: %1$s
+banishment_dimension.msg.ok.banishtime_add=§aAdded §e%2$s §aminute(s) to the banishment of §e%1$s§a; §e%3$s §aminute(s) remain (counts only while online).
+banishment_dimension.msg.ok.banishtime_set=§aSet the banishment of §e%1$s §ato §e%2$s §aminute(s); §e%3$s §aminute(s) remain (counts only while online).
+
+# ---- notices sent to the affected player ----
+banishment_dimension.msg.notice.banished=§c%1$s has banished you to the Banishment dimension. Here you are cut off from the world until an admin releases you.
+banishment_dimension.msg.notice.banishtime_add=§aAn admin added §e%1$s §aminute(s) to your banishment; §e%2$s §aminute(s) remain (counts only while online).
+banishment_dimension.msg.notice.banishtime_set=§aAn admin set your banishment to §e%1$s §aminute(s); §e%2$s §aminute(s) remain (counts only while online).
+banishment_dimension.msg.notice.released=§a%1$s has lifted your banishment. You are back in your original world; inventory and game mode have been restored.
+banishment_dimension.msg.notice.not_your_place=§eThis is not a place you may stay. Escorting you out.
+banishment_dimension.msg.notice.expired=§eYour banishment has expired; you have been returned to where you were before banishment.
+banishment_dimension.msg.notice.returned=§a%1$s has returned you to the Overworld.
+banishment_dimension.msg.notice.returned_origin=§aYou have been returned to the position you were at before entering the Banishment dimension.
+banishment_dimension.msg.notice.escape_hint=§eYou are not a banished player, yet you entered the Banishment dimension. Use /escape to return to where you were before, or you will be sent back shortly.
+
+# ---- status warnings ----
+banishment_dimension.msg.err.already_in_dim=§cYou are already in the banishment dimension.
+banishment_dimension.msg.err.dim_not_loaded=§cThe banishment dimension failed to load, so the banishment was aborted. Please contact an admin.
+banishment_dimension.msg.err.escape_not_player=§cThis command can only be used by a player in-game.
+banishment_dimension.msg.err.escape_banished=§cYou are a banished player, so /escape does not apply to you; wait for an admin to release you with /unbanish.
+banishment_dimension.msg.err.escape_not_in_dim=§cYou are not in the Banishment dimension (114), so /escape has no effect.
+banishment_dimension.msg.warn.pullback=§cThe banishment system detected you leaving the banishment dimension. You have been forcibly pulled back!
+banishment_dimension.msg.warn.dim_unavailable=§eThe banishment dimension is temporarily unavailable; your banishment has been released automatically.
+banishment_dimension.msg.warn.fallback_drop=§eYour banishment is lifted, but the origin dimension is unavailable; your inventory has been dropped at your feet.
+
+# ---- console log ----
+banishment_dimension.log.language=Active message language: %1$s (change S:language in config/%2$s: zh / en / both)
+banishment_dimension.log.server_stopping=Server stopping: %1$s banishment record(s) saved to the world folder %2$s/; banishment continues after restart.
+banishment_dimension.log.server_started=Loaded %2$s banishment record(s) (plain-text JSON, zero NBT) from the server folder %1$s; banishment continues after restart.
+banishment_dimension.log.banishtime_expired=Timed banishment expired: %1$s's banishment time ran out; released automatically and returned to the original spot.
+
+# ---- in-game config screen (Mods -> Banishment -> Config) ----
+# This native Forge screen follows the client's own language, not S:language above.
+config.banishment.language=Chat message language
+config.banishment.log_language=Console / log language
